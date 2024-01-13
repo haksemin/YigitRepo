@@ -1,4 +1,4 @@
-import { View,StyleSheet,Pressable,Text,Image} from "react-native";
+import { View,StyleSheet,Pressable,Image} from "react-native";
 import {Dimensions} from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
@@ -6,14 +6,14 @@ const windowHeight = Dimensions.get('window').height;
 
 function carouselClick(){
 
-    console.log("helo")
+    console.log("hello")
  }
 export default function Carousel() {
 
     return(
         <Pressable onPress={carouselClick}>
         <View style={styles.carousel}>
-                <Image style={{height:"100%", width:"100%"}} source={require("../assets/trycarousel.jpg")}></Image>
+                <Image style={{height:"100%", width:"100%"}} source={require("../assets/images/trycarousel.jpg")}></Image>
         </View>
         </Pressable>
     )

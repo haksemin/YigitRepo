@@ -6,7 +6,7 @@ const { width, height} = Dimensions.get("window");
 export default function Header(){
     return(
         <View style={styles.header}>
-            <Image source={require("./assets/yigitlogo.png")} style={{height: height* 0.086}}></Image>
+            <Image source={require("../assets/images/yigitlogo.png")} style={{height: height* 0.086}}></Image>
         </View>
     )
 }
