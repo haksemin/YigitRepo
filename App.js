@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Image } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import StatusBar from './components/StatusBar';
-import Carousel from './components/Carousel';
+import Carousel from './components/Cards/Carousel';
 import Header from './components/Header';
 import UrunlerSection from './components/UrunlerSection';
 

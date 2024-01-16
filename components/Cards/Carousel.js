@@ -13,7 +13,7 @@ export default function Carousel() {
     return(
         <Pressable onPress={carouselClick}>
         <View style={styles.carousel}>
-                <Image style={{height:"100%", width:"100%"}} source={require("../assets/images/trycarousel.jpg")}></Image>
+                <Image style={{height:"100%", width:"100%"}} source={require("../../assets/images/trycarousel.jpg")}></Image>
         </View>
         </Pressable>
     )

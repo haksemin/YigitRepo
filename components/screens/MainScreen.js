@@ -2,7 +2,10 @@ import { View,StyleSheet } from "react-native";
 import Carousel from "../Carousel";
 import UrunlerSection from "../UrunlerSection";
 import StatusBar from "../StatusBar"
+import {Dimensions} from 'react-native';
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default function MainScreen(){;
 
@@ -14,7 +17,8 @@ export default function MainScreen(){;
             <Carousel />
           </View>
           <View>
-            <UrunlerSection />
+            <UrunlerSection>
+            </UrunlerSection>
           </View>
         </View>
       );
