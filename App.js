@@ -6,7 +6,7 @@ import StatusBar from './components/StatusBar';
 import Carousel from './components/Cards/Carousel';
 import Header from './components/Header';
 import UrunlerSection from './components/UrunlerSection';
-
+import MainScreen from './screens/MainScreen';
 const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -27,16 +27,7 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar />
-      <Header></Header>
-      <View style={{ paddingTop: 15, alignItems: "center", }}>
-        <Carousel />
-      </View>
-      <View>
-        <UrunlerSection />
-      </View>
-    </View>
+    <MainScreen></MainScreen>
   );
 };
 

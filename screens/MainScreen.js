@@ -1,8 +1,9 @@
 import { View,StyleSheet } from "react-native";
-import Carousel from "../Carousel";
-import UrunlerSection from "../UrunlerSection";
-import StatusBar from "../StatusBar"
+import Carousel from "../components/Cards/Carousel";
+import UrunlerSection from "../components/UrunlerSection";
+import StatusBar from "../components/StatusBar"
 import {Dimensions} from 'react-native';
+import Header from "../components/Header";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

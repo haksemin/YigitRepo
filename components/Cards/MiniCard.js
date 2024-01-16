@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View,StyleSheet } from "react-native";
 
 
 
@@ -14,7 +14,9 @@ export default function MiniCard(){
 const styles = StyleSheet.create({
 
     card:{
-        height: 50,
-        width: 50,
+        height: 70,
+        width: 70,
+        backgroundColor: "black",
+        
     } 
 })
