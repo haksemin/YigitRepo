@@ -9,8 +9,8 @@ const windowHeight = Dimensions.get('window').height;
 export default function ButtonSection(){
 
     return(
-        <View style={{flexDirection:"column",width:windowWidth,height:windowHeight*0.2,justifyContent:"space-around"}}>
-            <View style={{flexDirection:"row",justifyContent:"space-around"}}>
+        <View style={{flexDirection:"column",width:windowWidth,height:windowHeight*0.2}}>
+            <View style={{flexDirection:"row",justifyContent:"space-around",marginVertical:15}}>
             <MPButton></MPButton>
             <MPButton></MPButton>
             </View>
