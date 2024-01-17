@@ -14,6 +14,10 @@ const App = () => {
     await Font.loadAsync({
      
       'Inter-Bold': require('./assets/fonts/Inter/Inter-Bold.ttf'), 
+      'Inter': require('./assets/fonts/Inter/Inter.ttf'), 
+      'Inter-Thin': require('./assets/fonts/Inter/Inter-Thin.ttf'), 
+      'Inter-Regular': require('./assets/fonts/Inter/Inter-Regular.ttf'), 
+      'Inter-Light': require('./assets/fonts/Inter/Inter-Light.ttf'), 
     });
     setFontsLoaded(true);
   };

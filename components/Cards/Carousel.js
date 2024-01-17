@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
 
     carousel: {
         height: 250,
-        width: windowWidth -15,
+        width: windowWidth -14,
         backgroundColor: "red",
         borderRadius:15,
-        overflow: "hidden"
+        overflow: "hidden",
+        marginHorizontal:7,
     }
 });
