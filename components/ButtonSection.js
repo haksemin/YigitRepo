@@ -6,13 +6,13 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-export default function ButtonSection(){
+export default function ButtonSection(ButtonBase){
 
     return(
         <View style={{flexDirection:"column",width:windowWidth,height:windowHeight*0.2}}>
             <View style={{flexDirection:"row",justifyContent:"space-around",marginVertical:15}}>
-            <MPButton></MPButton>
-            <MPButton></MPButton>
+            <MPButton ButtonBase="Sıfır Ürünler"></MPButton>
+            <MPButton ButtonBase="İkinci El"></MPButton>
             </View>
             <View style={{flexDirection:"row",justifyContent:"space-around"}}>
             <MPButton></MPButton>
