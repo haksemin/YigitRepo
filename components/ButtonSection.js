@@ -12,11 +12,11 @@ export default function ButtonSection(ButtonBase){
         <View style={{flexDirection:"column",width:windowWidth,height:windowHeight*0.2}}>
             <View style={{flexDirection:"row",justifyContent:"space-around",marginVertical:15}}>
             <MPButton ButtonBase="Sıfır Ürünler"></MPButton>
-            <MPButton ButtonBase="İkinci El"></MPButton>
+            <MPButton ButtonBase="2. El Liste"></MPButton>
             </View>
             <View style={{flexDirection:"row",justifyContent:"space-around"}}>
-            <MPButton></MPButton>
-            <MPButton></MPButton>
+            <MPButton ButtonBase="Günlük Liste"></MPButton>
+            <MPButton ButtonBase="Onarım Sorgu"></MPButton>
             </View>
             
         </View>

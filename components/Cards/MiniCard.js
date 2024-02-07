@@ -1,16 +1,20 @@
-import { View,StyleSheet,Image,Text } from "react-native";
+import { View,StyleSheet,Image,Text, Pressable } from "react-native";
 
-
+function urunCinsListele(){
+    console.log("Seçilen Ürün Türüne Ait Ürünler Listelendi")
+}
 
 export default function MiniCard(){
 
     return(
+        <Pressable onPress={urunCinsListele}>
         <View style={styles.card}>
             <Image source={require("../../assets/images/icon.png")} style={{height:"100%",width:"100%",borderRadius:15}} ></Image>
             <View>
                 <Text style={styles.text}>Ürünler</Text>
             </View>
         </View>
+        </Pressable>
     )
 }
 

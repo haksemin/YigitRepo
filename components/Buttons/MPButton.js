@@ -1,12 +1,15 @@
 import React from "react";
-import { StyleSheet, View,Image,Text } from "react-native";
+import { StyleSheet, View,Image,Text, Pressable } from "react-native";
 
 
-
+function showList(){
+    console.log("Seçilen alana ait liste gösteriliyor");
+}
 
 export default function MPButton({ ButtonBase }){
 
     return(
+        <Pressable onPress={showList}>
         <View style={styles.buton}>
             
             <View style={styles.solbuton}>
@@ -17,6 +20,7 @@ export default function MPButton({ ButtonBase }){
             </View>
             
         </View>
+        </Pressable>
     )
 }
 
