@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { ScrollView, View, StyleSheet, Dimensions } from "react-native";
-import Carousel from "../components/Cards/Carousel"; // Yolunu projenize göre ayarlayın
+import Carousel from "../Cards/Carousel"; // Yolunu projenize göre ayarlayın
 
 const windowWidth = Dimensions.get('window').width;
 const carouselWidth = windowWidth - 14; // Carousel bileşeninizin genişliği

@@ -1,5 +1,5 @@
 import { Text, View, Dimensions, ScrollView, Pressable } from "react-native";
-import MiniCard from '../components/Cards/MiniCard';
+import MiniCard from '../Cards/MiniCard';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

@@ -1,5 +1,5 @@
 import { View,Dimensions } from "react-native";
-import MPButton from "./Buttons/MPButton";
+import MPButton from "../Buttons/MPButton";
 
 
 const windowWidth = Dimensions.get('window').width;

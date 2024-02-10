@@ -1,11 +1,11 @@
 import { View,StyleSheet, ScrollView } from "react-native";
-import UrunlerSection from "../components/UrunlerSection";
-import StatusBar from "../components/StatusBar"
+import UrunlerSection from "../components/Sections/UrunlerSection";
+import StatusBar from "../components/Sections/StatusBar"
 import {Dimensions} from 'react-native';
-import Header from "../components/Header";
-import CarouselSection from "../components/CarouselSection";
-import ButtonSection from "../components/ButtonSection";
-import ProductListSection from "../components/ProductListSection";
+import Header from "../components/Sections/Header";
+import CarouselSection from "../components/Sections/CarouselSection";
+import ButtonSection from "../components/Sections/ButtonSection";
+import ProductListSection from "../components/Sections/ProductListSection";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
