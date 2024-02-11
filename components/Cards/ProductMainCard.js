@@ -15,7 +15,7 @@ export default function ProductMainCard() {
                     style={styles.gradient}
                 />
             </View>
-            <View style={{ flex: 0.25, backgroundColor: "white", width: "100%", height: "100%" }}></View>
+            <View style={styles.ProductInfo}></View>
         </View>
     );
 }
@@ -30,16 +30,24 @@ const styles = StyleSheet.create({
         marginVertical: 15,
         flex: 1,
         overflow: "hidden",
+
     },
     image: {
         width: "100%",
         height: "100%",
-        position: 'absolute', // Resmi ve gradyanı üst üste bindir
+        position: 'absolute', 
     },
     gradient: {
         flex: 1,
-        position: 'absolute', // Gradyanı mutlak konumlandırma
+        position: 'absolute',
         width: '100%',
         height: '100%',
+    },
+    ProductInfo:{
+        flex: 0.25,
+        backgroundColor: "white",
+        width: "100%",
+        height: "100%", 
+
     }
 });
