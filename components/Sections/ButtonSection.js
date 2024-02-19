@@ -6,7 +6,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-export default function ButtonSection(ButtonBase){
+export default function ButtonSection(){
 
     return(
         <View style={{flexDirection:"column",width:windowWidth,height:windowHeight*0.2}}>

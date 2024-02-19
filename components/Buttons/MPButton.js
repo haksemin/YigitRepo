@@ -6,7 +6,7 @@ const windowHeight = Dimensions.get('window').height;
 
 
 
-export default function MPButton(){
+export default function MPButton({ButtonBase}){
 
     return(
         <View style={styles.buton}>
@@ -15,7 +15,7 @@ export default function MPButton(){
                 <Image source={require("../../assets/images/File_icon.png")}></Image>
             </View>
             <View style={{marginHorizontal:15}}>
-                <Text style={{fontFamily:"Inter-SemiBold",fontWeight:600,color:"#3F3F3F"}}>Ürün Onarım</Text>
+                <Text style={{fontFamily:"Inter-SemiBold",fontWeight:600,color:"#3F3F3F"}}>{ButtonBase}</Text>
             </View>
             
         </View>
