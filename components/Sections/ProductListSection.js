@@ -9,7 +9,7 @@ const windowHeight = Dimensions.get('window').height;
 export default function ProductListSection(){
 
     return(
-        <View style={{width:windowWidth,flexDirection:"coulmn",justifyContent:"center"}}>
+        <View style={{width:windowWidth,flexDirection:"column",justifyContent:"center"}}>
             <View style={{width:windowWidth,flexDirection:"row",justifyContent:"center"}}>
                 <ProductMainCard ProductPrice={"10.000"} ProductName={"Iphone 11 Pro 128GB Gece Mavisi"}></ProductMainCard>
                 <ProductMainCard ProductPrice={"15.000"} ProductName={"Iphone 15 Pro 128GB Gece Mavisi"}></ProductMainCard>

@@ -2,11 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import StatusBar from './components/Sections/StatusBar';
-import Carousel from './components/Cards/Carousel';
-import Header from './components/Sections/Header';
-import UrunlerSection from './components/Sections/UrunlerSection';
-import MainScreen from './screens/MainScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TabNavigator from './screens/TabNavigator';
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+
+
+
+
+
+
 const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -32,15 +40,14 @@ const App = () => {
   }
 
   return (
-    <MainScreen></MainScreen>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='MainScreen' component={TabNavigator} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#EDEDED",
-  },
-});
+
 
 export default App;
