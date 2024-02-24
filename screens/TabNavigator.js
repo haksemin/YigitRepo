@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View,Image } from "react-native";
 import MainScreen from './MainScreen';
 import DailyListScreen from './DailyListScreen';
 import AccountScreen from './AccountScreen';
@@ -12,11 +12,67 @@ const Tab = createBottomTabNavigator();
 const TabNavigator  = () => {
 
     return(
-        <Tab.Navigator>
-            <Tab.Screen name="AnaSayfa" component={MainScreen} options={{headerShown:false}}></Tab.Screen>
-            <Tab.Screen name="Kampanyalar" component={CampaignScreen} options={{headerShown:false}}></Tab.Screen>
-            <Tab.Screen name="Sepet" component={SepetScreen} options={{headerShown:false}}></Tab.Screen>
-            <Tab.Screen name="Hesap" component={AccountScreen} options={{headerShown:false}}></Tab.Screen>
+        <Tab.Navigator 
+        screenOptions={{tabBarStyle: {height:60}}}
+        tabBarOptions={{
+            activeTintColor: 'tomato',
+            inactiveTintColor: 'gray',
+            showLabel: false,
+            style: { backgroundColor: '#FBBC0F', },
+            
+          }}>
+            <Tab.Screen name="AnaSayfa" component={MainScreen}
+            options={{
+                tabBarInactiveBackgroundColor:"#FBBC0F",
+                tabBarActiveBackgroundColor:"#FBBC0F",
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                <Image
+                    source={focused ? require('../assets/images/icons/Anasayfa4.png') : require('../assets/images/icons/Anasayfa3.png')}
+                    style={{ width: 86*0.8, height: 57*0.8 }}
+                />
+                ),
+            }}
+            />
+            <Tab.Screen name="Kampanyalar" component={CampaignScreen}  
+            options={{
+                tabBarInactiveBackgroundColor:"#FBBC0F",
+                tabBarActiveBackgroundColor:"#FBBC0F",
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                <Image
+                    source={focused ? require('../assets/images/icons/Kampanyalar4.png') : require('../assets/images/icons/Kampanyalar3.png')}
+                    style={{ width: 91*0.8, height: 57*0.8 }}
+                />
+                ),
+            }}
+            />
+            <Tab.Screen name="Sepet" component={SepetScreen} 
+            options={{
+                tabBarInactiveBackgroundColor:"#FBBC0F",
+                tabBarActiveBackgroundColor:"#FBBC0F",
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                <Image
+                    source={focused ? require('../assets/images/icons/sepetim4.png') : require('../assets/images/icons/sepetim3.png')}
+                    style={{ width: 86*0.8, height: 57*0.8 }}
+                />
+                ),
+            }}
+            />
+            <Tab.Screen name="Hesap" component={AccountScreen} 
+            options={{
+                tabBarInactiveBackgroundColor:"#FBBC0F",
+                tabBarActiveBackgroundColor:"#FBBC0F",
+                headerShown: false,
+                tabBarIcon: ({ focused }) => (
+                <Image
+                    source={focused ? require('../assets/images/icons/Profil4.png') : require('../assets/images/icons/Profil3.png')}
+                    style={{ width: 65*0.8, height: 57*0.8 }}
+                />
+                ),
+            }}
+            />
         </Tab.Navigator>
     )
 
