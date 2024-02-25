@@ -13,6 +13,7 @@ const windowHeight = Dimensions.get('window').height;
 export default function MainScreen(){;
 
     return (
+      
         <View style={styles.container}>
           <StatusBar />
           <Header />
@@ -31,6 +32,7 @@ export default function MainScreen(){;
             
           </ProductListSection>
           </ScrollView>
+          
         </View>
       );
 }

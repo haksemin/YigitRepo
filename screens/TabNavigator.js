@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View,Image } from "react-native";
+import { Text, View,Image,Dimensions } from "react-native";
 import MainScreen from './MainScreen';
 import DailyListScreen from './DailyListScreen';
 import AccountScreen from './AccountScreen';
@@ -7,13 +7,17 @@ import CampaignScreen from './CampaignScreen';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import SepetScreen from "./SepetScreen";
 
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const Tab = createBottomTabNavigator();
 
 const TabNavigator  = () => {
 
     return(
         <Tab.Navigator 
-        screenOptions={{tabBarStyle: {height:60}}}
+        screenOptions={{tabBarStyle: {height:windowHeight*0.10}}}
         tabBarOptions={{
             activeTintColor: 'tomato',
             inactiveTintColor: 'gray',
@@ -73,6 +77,7 @@ const TabNavigator  = () => {
                 ),
             }}
             />
+            
         </Tab.Navigator>
     )
 
