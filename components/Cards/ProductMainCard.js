@@ -16,8 +16,8 @@ export default function ProductMainCard({ProductPrice,ProductName}) {
                 />
             </View>
             <View style={styles.ProductInfo}>
-                <View style={{flex:0.5}}>
-                    <Text style={{fontSize:10,fontFamily:"Inter-SemiBold",fontWeight:600}}>{ProductName}</Text>
+                <View style={{flex:0.6}}>
+                    <Text style={{fontSize:13,fontFamily:"Inter-SemiBold",fontWeight:600}}>{ProductName}</Text>
                 </View>
                 <View style={{flex:0.5}}>
                     <Text style={{fontSize:14,fontFamily:"Inter-Bold",fontWeight:800}}>{ProductPrice} ₺ </Text>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "white",
         width: windowWidth * 0.4,
-        height: windowHeight * 0.28,
+        height: windowHeight * 0.3,
         borderRadius: 15,
         marginHorizontal: 15,
         marginVertical: 15,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     ProductInfo:{
-        flex: 0.25,
+        flex: 0.3,
         backgroundColor: "white",
         width: "100%",
         height: "100%", 

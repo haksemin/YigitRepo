@@ -47,7 +47,7 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name='MainScreen' component={TabNavigator} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
       </Stack.Navigator>
-      <View style={{position:"absolute", backgroundColor:"#FBBC0F",height:windowHeight*0.038,width:"100%",bottom:0}}></View>
+      <View style={{position:"absolute", backgroundColor:"#FBBC0F",height:windowHeight*0.036,width:"100%",bottom:0}}></View>
     </NavigationContainer>
     </SafeAreaProvider>
   );

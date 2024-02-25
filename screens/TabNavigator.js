@@ -17,12 +17,10 @@ const TabNavigator  = () => {
 
     return(
         <Tab.Navigator 
-        screenOptions={{tabBarStyle: {height:windowHeight*0.10}}}
+        screenOptions={{tabBarStyle: {height:windowHeight*0.13}}}
         tabBarOptions={{
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
             showLabel: false,
-            style: { backgroundColor: '#FBBC0F', },
+            style: { tabBarActiveBackgroundColor:"#FBBC0F" },
             
           }}>
             <Tab.Screen name="AnaSayfa" component={MainScreen}
@@ -32,8 +30,8 @@ const TabNavigator  = () => {
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
                 <Image
-                    source={focused ? require('../assets/images/icons/Anasayfa4.png') : require('../assets/images/icons/Anasayfa3.png')}
-                    style={{ width: 86*0.8, height: 57*0.8 }}
+                    source={focused ? require('../assets/images/ikon/Anasayfa1.png') : require('../assets/images/ikon/Anasayfa2.png')}
+                    style={{ width: 86*1, height: 57*1 }}
                 />
                 ),
             }}
@@ -45,8 +43,8 @@ const TabNavigator  = () => {
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
                 <Image
-                    source={focused ? require('../assets/images/icons/Kampanyalar4.png') : require('../assets/images/icons/Kampanyalar3.png')}
-                    style={{ width: 91*0.8, height: 57*0.8 }}
+                    source={focused ? require('../assets/images/ikon/Kampanyalar1.png') : require('../assets/images/ikon/Kampanyalar2.png')}
+                    style={{ width: 91*1, height: 57*1 }}
                 />
                 ),
             }}
@@ -58,8 +56,8 @@ const TabNavigator  = () => {
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
                 <Image
-                    source={focused ? require('../assets/images/icons/sepetim4.png') : require('../assets/images/icons/sepetim3.png')}
-                    style={{ width: 86*0.8, height: 57*0.8 }}
+                    source={focused ? require('../assets/images/ikon/Sepet1.png') : require('../assets/images/ikon/Sepet2.png')}
+                    style={{ width: 86*1, height: 57*1 }}
                 />
                 ),
             }}
@@ -71,8 +69,8 @@ const TabNavigator  = () => {
                 headerShown: false,
                 tabBarIcon: ({ focused }) => (
                 <Image
-                    source={focused ? require('../assets/images/icons/Profil4.png') : require('../assets/images/icons/Profil3.png')}
-                    style={{ width: 65*0.8, height: 57*0.8 }}
+                    source={focused ? require('../assets/images/ikon/Hesap1.png') : require('../assets/images/ikon/Hesap2.png')}
+                    style={{ width: 65*1, height: 57*1}}
                 />
                 ),
             }}
