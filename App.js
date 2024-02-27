@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNavigator from './screens/TabNavigator';
+import UrunGoster from './screens/UrunGoster';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -46,8 +47,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='MainScreen' component={TabNavigator} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
+        <Stack.Screen name='UrunGoster' component={UrunGoster} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
       </Stack.Navigator>
-      <View style={{position:"absolute", backgroundColor:"#FBBC0F",height:windowHeight*0.036,width:"100%",bottom:0}}></View>
+      {Platform.OS === 'ios' && (
+          <View style={{position: "absolute", backgroundColor: "#FBBC0F", height: windowHeight * 0.036, width: "100%", bottom: 0}}></View>
+        )}
     </NavigationContainer>
     </SafeAreaProvider>
   );

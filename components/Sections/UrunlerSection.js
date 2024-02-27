@@ -1,15 +1,22 @@
 import { Text, View, Dimensions, ScrollView, Pressable } from "react-native";
 import MiniCard from '../Cards/MiniCard';
+import { useNavigation } from "@react-navigation/native";
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-function navigateToProductsScreen(){
-    console.log("Ürünler ekranı açıldı");
-}
+
+
 
 export default function UrunlerSection() {
+
+
+    
+function navigateToProductsScreen(){
+    navigation.navigate("UrunGoster");
+}
+    const navigation = useNavigation();
     return (
         <>
         <View style={{ paddingTop: 10,flexDirection:"row",justifyContent:"space-between"}}>
