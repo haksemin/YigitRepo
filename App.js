@@ -9,6 +9,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import StackNavigatorScreen from './screens/StackNavigator';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+import TabNavigator from './screens/TabNavigator';
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -44,7 +45,7 @@ const App = () => {
   return (
     <SafeAreaProvider>
     <NavigationContainer>
-      <StackNavigatorScreen></StackNavigatorScreen>
+      <TabNavigator/>
       {Platform.OS === 'ios' && (
           <View style={{position: "absolute", backgroundColor: "#FBBC0F", height: windowHeight * 0.036, width: "100%", bottom: 0}}></View>
         )}

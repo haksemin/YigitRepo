@@ -6,6 +6,7 @@ import AccountScreen from './AccountScreen';
 import CampaignScreen from './CampaignScreen';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import SepetScreen from "./SepetScreen";
+import StackNavigatorScreen from "./StackNavigator";
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -23,7 +24,7 @@ const TabNavigator  = () => {
             style: { tabBarActiveBackgroundColor:"#FBBC0F" },
             
           }}>
-            <Tab.Screen name="AnaSayfa" component={MainScreen}
+            <Tab.Screen name="AnaSayfa" component={StackNavigatorScreen}
             options={{
                 tabBarInactiveBackgroundColor:"#FBBC0F",
                 tabBarActiveBackgroundColor:"#FBBC0F",
