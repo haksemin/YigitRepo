@@ -1,47 +1,74 @@
-import React from "react";
-import { View,Text,StyleSheet,ScrollView, Button,Dimensions } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, StyleSheet, FlatList } from "react-native";
+import axios from "axios";
+import ProductMainCard from "../components/Cards/ProductMainCard";
 import StatusBar from "../components/Sections/StatusBar";
 import Header from "../components/Sections/Header";
-import { useNavigation } from "@react-navigation/native";
-import ProductMainCard from "../components/Cards/ProductMainCard";
 
+export default function UrunGoster() {
+  const [products, setProducts] = useState([]);
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+  useEffect(() => {
+    axios.get("https://yigitgsm.net/liste_api_v2")
+      .then(response => {
+        const originalAccessories = response.data.data["ORJİNAL AKS."]["SIFIR"];
+        const productList = [];
+        for (const category in originalAccessories) {
+          for (const price in originalAccessories[category]) {
+            for (const color in originalAccessories[category][price]) {
+              const product = originalAccessories[category][price][color];
+              productList.push(product);
+            }
+          }
+        }
+        // Ürün listesi tek sayıda öğe içeriyorsa, son sırayı doldurmak için boş bir öğe ekleyin
+        if (productList.length % 2 !== 0) {
+          productList.push({ isEmpty: true }); // Boş öğe olarak işaretle
+        }
+        setProducts(productList);
+      })
+      .catch(error => console.error(error));
+  }, []);
 
+  const renderItem = ({ item }) => {
+    // Boş öğe ise görünmez bir öğe render et
+    if (item.isEmpty) {
+      return <View style={{ flex: 1 }} />;
+    }
+    return (
+      <ProductMainCard
+        ProductPrice={item.SATIS_FIYAT_1}
+        ProductName={item.STOK_ADI}
+        style={{ flex: 1, margin: 5 }} // Her kart için stil ayarı
+      />
+    );
+  };
 
-
-export default function UrunGoster(){
-
-    return(
-        <View style={styles.container}>
-          <StatusBar />
-          <Header />
-          <ScrollView>
-          <View style={{width:windowWidth,flexDirection:"column",justifyContent:"center"}}>
-            <View style={{width:windowWidth,flexDirection:"row",justifyContent:"center"}}>
-                <ProductMainCard ProductPrice={"10.000"} ProductName={"Iphone 11 Pro 128GB Gece Mavisi"}></ProductMainCard>
-                <ProductMainCard ProductPrice={"15.000"} ProductName={"Iphone 15 Pro 128GB Gece Mavisi"}></ProductMainCard>
-            </View>
-            <View style={{width:windowWidth,flexDirection:"row",justifyContent:"center"}}>
-                <ProductMainCard ProductPrice={"14.000"} ProductName={"Iphone 12 Pro 128GB Gece Mavisi"}></ProductMainCard>
-                <ProductMainCard ProductPrice={"12.000"} ProductName={"Iphone 15 Pro 128GB Gece Mavisi"}></ProductMainCard>
-            </View>
-            <View style={{width:windowWidth,flexDirection:"row",justifyContent:"center"}}>
-                <ProductMainCard ProductPrice={"17.000"} ProductName={"Iphone 14 Pro 128GB Gece Mavisi"}></ProductMainCard>
-                <ProductMainCard ProductPrice={"18.000"} ProductName={"Iphone 15 Pro 128GB Gece Mavisi"}></ProductMainCard>
-            </View>
-        </View>
-          </ScrollView>
-          
-        </View>
-    )
+  return (
+    <View style={styles.container}>
+      <StatusBar />
+      <Header />
+      <FlatList
+        data={products}
+        renderItem={renderItem}
+        keyExtractor={(item, index) => String(index)}
+        numColumns={2}
+        style={styles.flatListStyle}
+        contentContainerStyle={styles.flatListContentContainer}
+      />
+    </View>
+  );
 }
 
-
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: "#EDEDED",
-    },
-  });
+  container: {
+    flex: 1,
+    backgroundColor: "#EDEDED",
+  },
+  flatListStyle: {
+    // Buraya FlatList için genel stiller ekleyebilirsiniz.
+  },
+  flatListContentContainer: {
+    // Buraya içerik konteyneri için stiller ekleyebilirsiniz, örneğin padding veya margin.
+  },
+});

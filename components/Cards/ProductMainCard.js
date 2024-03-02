@@ -17,10 +17,10 @@ export default function ProductMainCard({ProductPrice,ProductName}) {
             </View>
             <View style={styles.ProductInfo}>
                 <View style={{flex:0.6}}>
-                    <Text style={{fontSize:13,fontFamily:"Inter-SemiBold",fontWeight:600}}>{ProductName}</Text>
+                    <Text style={{fontSize:10,fontFamily:"Inter-SemiBold",fontWeight:600}}>{ProductName}</Text>
                 </View>
                 <View style={{flex:0.5}}>
-                    <Text style={{fontSize:14,fontFamily:"Inter-Bold",fontWeight:800}}>{ProductPrice} ₺ </Text>
+                    <Text style={{fontSize:12,fontFamily:"Inter-Bold",fontWeight:800}}>{ProductPrice} ₺ </Text>
                 </View>
             </View>
         </View>
