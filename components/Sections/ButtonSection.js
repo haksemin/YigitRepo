@@ -15,7 +15,7 @@ export default function ButtonSection(){
             <MPButton ButtonBase="2. El Liste"></MPButton>
             </View>
             <View style={{flexDirection:"row",justifyContent:"space-around"}}>
-            <MPButton ButtonBase="Günlük Liste"></MPButton>
+            <MPButton ButtonBase="Günlük Liste" rotasyon={"GunlukListe"}></MPButton>
             <MPButton ButtonBase="Onarım Sorgu"></MPButton>
             </View>
             

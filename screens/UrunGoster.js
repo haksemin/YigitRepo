@@ -11,12 +11,14 @@ export default function UrunGoster() {
   useEffect(() => {
     axios.get("https://yigitgsm.net/liste_api_v2")
       .then(response => {
-        const originalAccessories = response.data.data["ORJİNAL AKS."]["SIFIR"];
+        const veri = response.data.data;
         const productList = [];
-        for (const category in originalAccessories) {
-          for (const price in originalAccessories[category]) {
-            for (const color in originalAccessories[category][price]) {
-              const product = originalAccessories[category][price][color];
+        for (const bolum in veri)
+        for (const durum in veri[bolum])
+        for (const category in veri[bolum][durum]) {
+          for (const price in veri[bolum][durum][category]) {
+            for (const color in veri[bolum][durum][category][price]) {
+              const product = veri[bolum][durum][category][price][color];
               productList.push(product);
             }
           }
@@ -39,6 +41,7 @@ export default function UrunGoster() {
       <ProductMainCard
         ProductPrice={item.SATIS_FIYAT_1}
         ProductName={item.STOK_ADI}
+        Product_Color={item.HEX_KODU}
         style={{ flex: 1, margin: 5 }} // Her kart için stil ayarı
       />
     );

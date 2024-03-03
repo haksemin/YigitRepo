@@ -6,7 +6,7 @@ import Header from "../components/Sections/Header";
 import CarouselSection from "../components/Sections/CarouselSection";
 import ButtonSection from "../components/Sections/ButtonSection";
 import ProductListSection from "../components/Sections/ProductListSection";
-
+import UrunGoster from "./UrunGoster";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -28,9 +28,7 @@ export default function MainScreen(){;
           <View>
             <ButtonSection></ButtonSection>
           </View>
-          <ProductListSection>
-            
-          </ProductListSection>
+          
           </ScrollView>
           
         </View>

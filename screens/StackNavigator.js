@@ -6,6 +6,7 @@ import UrunGoster from './UrunGoster';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 import MainScreen from './MainScreen';
+import DailyScreen from './DailyListScreen';
 
 
 
@@ -15,6 +16,7 @@ export default function StackNavigatorScreen(){
         <Stack.Navigator>
             <Stack.Screen name='MainScreen' component={MainScreen} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
             <Stack.Screen name='UrunGoster' component={UrunGoster} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
+            <Stack.Screen name='GunlukListe' component={DailyScreen} options={{ headerShown: false  , animationEnabled:false}}></Stack.Screen>
         </Stack.Navigator>
     )
 }

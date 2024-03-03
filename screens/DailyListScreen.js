@@ -1,6 +1,9 @@
 import React from "react";
 import { View,Text } from "react-native";
+import Header from "../components/Sections/Header";
+import StatusBar from "../components/Sections/StatusBar";
 
+import ListeGrup from "../components/Sections/ListeGrup";
 
 
 
@@ -9,7 +12,11 @@ export default function DailyScreen(){
     return(
 
         <View>
-            <Text>Gunluk Liste</Text>
+            <StatusBar></StatusBar>
+            <Header></Header>
+            <View>
+                <ListeGrup></ListeGrup>
+            </View>
         </View>
     )
 }

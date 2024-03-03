@@ -1,13 +1,21 @@
 import React from "react";
-import { StyleSheet, View,Image,Text,Dimensions } from "react-native";
+import { StyleSheet, View,Image,Text,Dimensions, Pressable } from "react-native";
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+import { useNavigation } from "@react-navigation/native";
 
 
+export default function MPButton({ButtonBase,rotasyon}){
 
-export default function MPButton({ButtonBase}){
+    function NavigateTo(){
+        navigation.navigate(rotasyon);
+    }
+
+    const navigation = useNavigation();
+
 
     return(
+        <Pressable onPress={NavigateTo}>
         <View style={styles.buton}>
             
             <View style={styles.solbuton}>
@@ -18,6 +26,7 @@ export default function MPButton({ButtonBase}){
             </View>
             
         </View>
+        </Pressable>
     )
 }
 
