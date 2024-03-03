@@ -14,7 +14,11 @@ export default function ListeGrup(){
                 <Text style={{fontFamily: "Inter-Bold", fontSize: 20, marginHorizontal:15,color:"black" }}>Apple</Text>
             </View>
             <View>
-                <ListeCard></ListeCard>
+                <ListeCard ProductName={"Iphone 15 PRO MAX 256GB"} ProductPrice={"76.000"}></ListeCard>
+                <ListeCard ProductName={"Iphone 15 PRO MAX PLUS 256GB"} ProductPrice={"6.000"}></ListeCard>
+                <ListeCard ProductName={"Iphone 12 PRO  128GB"} ProductPrice={"763.000"}></ListeCard>
+                <ListeCard ProductName={"Iphone 15 PRO MAX 256GB"} ProductPrice={"726.000"}></ListeCard>
+
             </View>
         </View>
     )
