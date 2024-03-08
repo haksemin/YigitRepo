@@ -1,47 +1,52 @@
+// ListeCard.js
 import React from "react";
-import { View,Dimensions,Text,StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
-
-
-export default function ListeCard({ProductName,ProductPrice,ProductColor}){
-
-    return(
-        <View style={style.container}>
-            <View style={{flex:0.5}}>
-                <View style={{flexDirection:"row",flex:1}}>
-                    <Text style={{fontFamily: "Inter-Medium", fontSize: 10, marginHorizontal:15,color:"black" }}>{ProductName}</Text>
-                    <View style={{flex:1.2,flexDirection:"row",justifyContent:"flex-end"}}>
-                        <View style={{width:15,height:15,backgroundColor:"red",borderRadius:15,marginHorizontal:1}}></View>
-                        <View style={{width:15,height:15,backgroundColor:"black",borderRadius:15,marginHorizontal:1}}></View>
-                        <View style={{width:15,height:15,backgroundColor:"blue",borderRadius:15,marginHorizontal:1}}></View>
-                        
-                    </View>
-                    <View style={{width:120,alignItems:"flex-end"}}>
-                    <Text style={{fontFamily: "Inter-Medium", fontSize: 13, marginHorizontal:15,color:"black" }}>{ProductPrice} ₺</Text>
-                    </View>
-                </View>
-            </View>
-
-        </View>
-    )
+export default function ListeCard({ ProductName, ProductPrice, ProductColors }) {
+  return (
+    <View style={styles.cardContainer}>
+      <Text style={styles.productName}>{ProductName}</Text>
+      <View style={styles.colorContainer}>
+        {ProductColors.map((color, index) => (
+          <View key={index} style={[styles.colorIndicator, { backgroundColor: color }]} />
+        ))}
+      </View>
+      <Text style={styles.productPrice}>{ProductPrice} ₺</Text>
+    </View>
+  );
 }
 
-
-
-
-
-const style = StyleSheet.create({
-    
-    container:{ 
-        width:windowWidth,
-        height:windowHeight*0.06,
-        backgroundColor:"white",
-        justifyContent:"center",
-        
-        
-
-
-}})
+const styles = StyleSheet.create({
+  cardContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ccc",
+    backgroundColor: "#fff",
+  },
+  productName: {
+    fontSize: 10,
+    fontWeight: "bold",
+    color: "#333",
+    width:200
+  },
+  colorContainer: {
+    flexDirection: "row",
+  },
+  colorIndicator: {
+    width: 15,
+    height: 15,
+    borderRadius: 7.5,
+    marginHorizontal: 2,
+    borderColor:"black",
+    borderWidth:1
+  },
+  productPrice: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  // Diğer stil tanımlamalarınız...
+});
