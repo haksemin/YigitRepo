@@ -1,8 +1,12 @@
 // ListeGrup.js
 import React, { useEffect, useState } from "react";
-import { ScrollView, View, Text, StyleSheet } from "react-native";
+import { ScrollView, View, Text, StyleSheet,Dimensions } from "react-native";
 import axios from "axios";
 import ListeCard from "../Cards/ListeKomponentCard";
+
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default function ListeGrup() {
   const [groupedProducts, setGroupedProducts] = useState({});
@@ -47,7 +51,7 @@ export default function ListeGrup() {
   return (
     <ScrollView style={styles.scrollView}>
       {Object.entries(groupedProducts).map(([brand, products], brandIndex) => (
-        <View key={brandIndex}>
+        <View style={{margin:15,borderWidth:1,borderRadius:15,overflow:"hidden"}} key={brandIndex}>
           <Text style={styles.brandHeader}>{brand}</Text>
           {Object.values(products).map((product, productIndex) => (
             <ListeCard
@@ -66,6 +70,8 @@ export default function ListeGrup() {
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: "#EDEDED",
+    marginBottom:130,
+    bounces:false,
   },
   brandHeader: {
     backgroundColor: "#FBBC0F",
@@ -74,5 +80,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#333",
   },
-  // Diğer stil tanımlamalarınız...
+
 });

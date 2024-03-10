@@ -48,5 +48,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
-  // Diğer stil tanımlamalarınız...
+
 });
