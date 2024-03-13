@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, View, Text, StyleSheet,Dimensions } from "react-native";
 import axios from "axios";
 import ListeCard from "../Cards/ListeKomponentCard";
+import { SearchBar } from "react-native-screens";
+import SearchBox from "./SearchBox";
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -10,6 +12,24 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function ListeGrup() {
   const [groupedProducts, setGroupedProducts] = useState({});
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const searchQueryLower = searchQuery.toLocaleLowerCase('tr-TR');
+
+  const filteredProducts = Object.keys(groupedProducts).reduce((acc, brand) => {
+    const filtered = Object.entries(groupedProducts[brand]).filter(([productName]) =>
+      productName.toLocaleLowerCase('tr-TR').includes(searchQueryLower)
+    );
+  
+    if (filtered.length > 0) {
+      acc[brand] = Object.fromEntries(filtered);
+    }
+  
+    return acc;
+  }, {});
+
+
 
   useEffect(() => {
     axios.get("https://yigitgsm.net/liste_api_v2")
@@ -50,7 +70,14 @@ export default function ListeGrup() {
 
   return (
     <ScrollView style={styles.scrollView}>
-      {Object.entries(groupedProducts).map(([brand, products], brandIndex) => (
+      <View>
+      <SearchBox onChangeText={(text) => setSearchQuery(text)} />
+
+      </View>
+      
+  
+
+{Object.entries(filteredProducts).map(([brand, products], brandIndex) => (
         <View style={{margin:15,borderWidth:1,borderRadius:15,overflow:"hidden"}} key={brandIndex}>
           <Text style={styles.brandHeader}>{brand}</Text>
           {Object.values(products).map((product, productIndex) => (
