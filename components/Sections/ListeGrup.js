@@ -97,7 +97,7 @@ export default function ListeGrup() {
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: "#EDEDED",
-    marginBottom:130,
+    paddingBottom:250,
     bounces:false,
   },
   brandHeader: {
