@@ -1,9 +1,7 @@
-// ListeGrup.js
 import React, { useEffect, useState } from "react";
 import { ScrollView, View, Text, StyleSheet,Dimensions } from "react-native";
 import axios from "axios";
 import ListeCard from "../Cards/ListeKomponentCard";
-import { SearchBar } from "react-native-screens";
 import SearchBox from "./SearchBox";
 
 
@@ -97,7 +95,7 @@ export default function ListeGrup() {
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: "#EDEDED",
-    paddingBottom:250,
+    paddingBottom:windowHeight*0.2,
     bounces:false,
   },
   brandHeader: {

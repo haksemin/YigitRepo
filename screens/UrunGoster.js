@@ -69,9 +69,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#EDEDED",
   },
   flatListStyle: {
-    // Buraya FlatList için genel stiller ekleyebilirsiniz.
+   
   },
   flatListContentContainer: {
-    // Buraya içerik konteyneri için stiller ekleyebilirsiniz, örneğin padding veya margin.
+   
   },
 });
