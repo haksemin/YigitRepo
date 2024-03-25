@@ -10,7 +10,7 @@ import StackNavigatorScreen from './screens/StackNavigator';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 import TabNavigator from './screens/TabNavigator';
-
+import { usePushNotifications } from './usePushNotifications';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -19,6 +19,11 @@ const windowHeight = Dimensions.get('window').height;
 
 
 const App = () => {
+
+  const {expoPushToken, notification} = usePushNotifications();
+
+  const data = JSON.stringify(notification, undefined, 2);
+
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   const loadFonts = async () => {

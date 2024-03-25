@@ -19,10 +19,12 @@
       "bundleIdentifier": "com.haxemeen.YigitApp"
     },
     "android": {
+      "googleServicesFile": "./android/app/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.haxemeen.YigitApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +33,7 @@
       "eas": {
         "projectId": "e8d9c7be-37ce-421b-a2ae-871cbe56607f"
       }
-    }
+    },
+    "owner": "orgyigit"
   }
 }
