@@ -30,14 +30,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10,
+    paddingHorizontal: 15,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
     backgroundColor: "#fff",
+    paddingVertical:5
   },
   productName: {
     fontSize: 10,
-    fontWeight: "bold",
+    fontWeight: "500",
     color: "#333",
     width:180
   },
